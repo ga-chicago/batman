@@ -1,0 +1,20 @@
+<h1>Heroes!</h1>
+<form action="/heroes" method="POST">
+	<input type="text" placeholder="Name" name="name"/>
+	<input type="text" placeholder="Movie" name="movie"/>
+	<input type="text" placeholder="Super Power" name="power"/>
+	<input type="text" placeholder="Height" name="height"/>
+	<input type="submit" value="Submit!"/>
+</form>
+<table border="1">
+	{{#each heroesArray}}
+	<tr data-id="{{this.id}}">
+		<td><input type="text" class="name" value="{{this.name}}"/></td>
+		<td><input type="text" class="movie" value="{{this.movie}}"/></td>
+		<td><input type="text" class="power" value="{{this.power}}"/></td>
+		<td><input type="text" class="height" value="{{this.height}}"/></td>
+		<td><button class="hedit">SAVE</button></td>
+		<td><button class="hdelete">DELETE</button></td>
+	</tr>
+	{{/each}}
+</table>
