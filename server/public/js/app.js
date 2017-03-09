@@ -56,3 +56,11 @@ $('.edit').on('click', function(e) {
 	console.log(name, movie, power, height);
 	console.log('clicked on edit button');
 })
+
+$('#buttonHeroes').on('click', function() {
+	window.location.href='/heroes';
+})
+
+$('#buttonVillains').on('click', function() {
+	window.location.href='/villains';
+})

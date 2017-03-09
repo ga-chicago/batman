@@ -1,8 +1,20 @@
+<div id="header">
 {{#if villains}}
 	<h1>Villains!</h1>
 {{else}}
 	<h1>Heroes!</h1>
 {{/if}}
+</div>
+
+<div id="changeButton">
+	{{#if villains}}
+		<button id="buttonHeroes" class="button">Heroes</button>
+	{{else}}
+		<button id="buttonVillains" class="button">Villains</button>
+	{{/if}}
+</div>
+
+<div id="dataEntry">
 {{#if villains}}
 	<form action="/villains" method="POST">
 {{else}}
@@ -12,10 +24,17 @@
 	<input type="text" placeholder="Movie" name="movie"/>
 	<input type="text" placeholder="Super Power" name="power"/>
 	<input type="text" placeholder="Height" name="height"/>
-	<input type="submit" value="Submit!"/>
+	<input type="submit" value="Submit!" class="button"/>
 </form>
+</div>
 
-<table border="1">
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Movie</th>
+		<th>Power</th>
+		<th>Height</th>
+	</tr>
 	{{#each array}}
 	<tr data-id = {{this.id}}>
 		<td>
@@ -31,12 +50,12 @@
 			<input type="text" value = "{{this.height}}" class="height" />
 		</td>
 		<td>
-			<button class="edit">
+			<button class="edit button">
 				SAVE
 			</button>
 		</td>
 		<td>
-			<button class="delete">
+			<button class="delete button">
 				DELETE
 			</button>
 		</td>
