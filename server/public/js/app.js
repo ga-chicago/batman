@@ -1,5 +1,5 @@
 $('.delete').on('click', function(e){
-	var row = (e.target).parent().parent();
+	var row = $(e.target).parent().parent();
 	var id  = row.data('id');
 
 	$.ajax({
@@ -15,7 +15,7 @@ $('.delete').on('click', function(e){
 })
 
 $('.edit').on('click', function(e){
-	var row = (e.target).parent().parent();
+	var row = $(e.target).parent().parent();
 	var id  = row.data('id');
 
 	var name  = row.find('name').val();
@@ -33,7 +33,7 @@ $('.edit').on('click', function(e){
 	$.ajax({
 		url: '/heroes/' + id,
 		type: 'PATCH',
-		data: updatedHero
+		data: updatedHero,
 		success: function(result){
 			console.log(result);
 		},	
@@ -43,6 +43,8 @@ $('.edit').on('click', function(e){
 	})				  
 
 });
+
+
 
 
 
