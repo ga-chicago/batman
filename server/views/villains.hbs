@@ -1,0 +1,43 @@
+<h1>Batman Villains</h1>
+
+<form action="/villains" method="POST">
+
+	<input type="text" name="name" placeholder="Name"/>
+	<input type="text" name="movie" placeholder="Movie"/>
+	<input type="text" name="power" placeholder="Super Power"/>
+	<input type="text" name="height" placeholder="Height"/>
+	<input type="submit" name="Submit">
+
+
+</form><br>
+
+<table>
+	{{#each villainsArray}}
+	<tr data-id="{{ this.id }}" data-index="{{@index}}">
+		<td>
+			<input type="text" value="{{ this.name }}" class="name"/>
+		</td>
+		<td>
+			<input type="text" value="{{ this.movie }}" class="movie"/>
+		</td>
+		<td>
+			<input type="text" value="{{ this.power }}" class="power"/>
+		</td>
+		<td>
+			<input type="text" value="{{ this.height }}" class="height"/>
+		</td>
+		<td>
+			<button class="edit">
+			SAVE
+			</button>
+		</td>
+		<td>
+			<button class="delete">
+			DELETE
+			</button>
+		</td>
+	</tr>
+	{{/each}}
+</table>
+
+<script src="./publicJs/app.js"></script>
