@@ -1,4 +1,4 @@
-console.log("yooooo");
+console.log("this is working!");
 
 $('.delete').on('click', function(e){
 	var row = $(e.target).parent().parent();
