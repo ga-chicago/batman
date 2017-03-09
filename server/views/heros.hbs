@@ -1,0 +1,43 @@
+<h1>Gotham's Heros!</h1>
+
+<form action="/heros" method="POST">
+	<input type="text" name="heroName" placeholder="Hero Name"/>
+	<input type="text" name="realName" placeholder="Real Name"/>
+	<input type="text" name="weight" placeholder="Weight"/>
+	<input type="text" name="height" placeholder="Height"/>
+	<input type="text" name="noteableFeature" placeholder="Noteable Feature">
+		<input type="submit" value="Submit!">
+</form>
+
+<table border="1">
+	{{#each herosArray}}
+	<tr data-id="{{this.id}}">
+		<td>
+			<input class="heroName" type="text" value="{{this.heroName}}"/>
+		</td>
+		
+		<td>
+			<input class="realName" type="text" value="{{this.realName}}"/>
+		</td>
+		
+		<td>
+			<input class="weight" type="text" value="{{this.weight}}"/>
+		</td>
+		
+		<td>
+			<input class="height" type="text" value="{{this.height}}"/>
+		</td>
+		
+		<td>
+			<input class="noteableFeature" type="text" value="{{this.noteableFeature}}"/>
+		</td>
+		
+		<td>
+			<button class="save">Save</button>
+		</td>
+		<td>
+			<button class="delete">Delete</button>
+		</td>
+	{{/each}}
+	</tr>
+</table>
