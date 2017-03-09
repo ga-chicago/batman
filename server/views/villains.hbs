@@ -1,0 +1,43 @@
+<h1>Gotham's Villains!</h1>
+
+<form action="/villains" method="POST">
+	<input type="text" name="villainName" placeholder="Villain Name"/>
+	<input type="text" name="realName" placeholder="Real Name"/>
+	<input type="text" name="weight" placeholder="Weight"/>
+	<input type="text" name="height" placeholder="Height"/>
+	<input type="text" name="noteableFeature" placeholder="Noteable Feature">
+		<input type="submit" value="Submit!">
+</form>
+
+<table border="1">
+	{{#each villainsArray}}
+	<tr data-id="{{this.id}}">
+		<td>
+			<input class="villainName" type="text" value="{{this.villainName}}"/>
+		</td>
+		
+		<td>
+			<input class="realName" type="text" value="{{this.realName}}"/>
+		</td>
+		
+		<td>
+			<input class="weight" type="text" value="{{this.weight}}"/>
+		</td>
+		
+		<td>
+			<input class="height" type="text" value="{{this.height}}"/>
+		</td>
+		
+		<td>
+			<input class="noteableFeature" type="text" value="{{this.noteableFeature}}"/>
+		</td>
+		
+		<td>
+			<button class="saveVillain">Save</button>
+		</td>
+		<td>
+			<button class="deleteVillain">Delete</button>
+		</td>
+	{{/each}}
+	</tr>
+</table>
