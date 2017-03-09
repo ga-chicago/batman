@@ -1,0 +1,39 @@
+<h1 style="text-align:center; font-size: 35"> Villains! </h1>
+
+<form style="text-align:center" action= "/villains" method= "POST">
+	<input type= "text" placeholder="Name" name="name"/>
+	<input type= "text" placeholder="Movie" name= "movie"/>
+	<input type= "text" placeholder="Super Power" name ="power"/>
+	<input type= "text" placeholder="Height" name= "height"/>
+	<input type="submit" value= "SUBMIT"/>
+</form>
+
+<table border= "1" align="center">
+{{#each villainsArray}}
+				<tr {{!-- style="font-weight:bold; color:white" --}} data-id="{{this.id}}">
+			<td>
+			<input type="text" 	value="{{ this.name }}" class= "name"/>
+		</td>
+		<td>
+			<input type= "text" value="{{ this.movie }}" class="movie"/>
+		</td>
+		<td>
+			<input type= "text" value="{{ this.power }}" class= "power"/>
+		</td>
+		<td>
+			<input type= "text" value="{{ this.height }}" class="height"/>
+		</td>
+		<td>
+			<button class= "edit-villains">
+			SAVE
+			</button>
+		</td>
+		<td>
+			<button class= "delete-villains">
+			DELETE
+			</button>
+		</td>
+	</tr>
+{{/each}}
+</table>
+
