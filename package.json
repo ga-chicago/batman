@@ -1,0 +1,27 @@
+{
+  "name": "batman",
+  "version": "0.1.0",
+  "description": "### Requirements:",
+  "main": "./server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlippincott/batman.git"
+  },
+  "author": "Terry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tlippincott/batman/issues"
+  },
+  "homepage": "https://github.com/tlippincott/batman#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "hbs": "^4.0.1",
+    "mongoose": "^4.8.6",
+    "path": "^0.12.7"
+  }
+}
