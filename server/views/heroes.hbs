@@ -1,0 +1,49 @@
+<h1>Heroes</h1>
+<form action="/heroes" method="post">
+	<input type="text" name="name" placeholder="Name"/>
+	<input type="text" name="movie" placeholder="Movie"/>
+	<input type="text" name="power" placeholder="Power"/>
+	<input type="text" name="height" placeholder="Height"/>
+	<input type="text" name="cape" placeholder="Cape?"/>
+	<input type="text" name="heroLevel" placeholder="Hero Level"/>
+	<input type="text" name="charming" placeholder="Charming?"/>
+	<input type="submit" value="~*~Submit~*~"/>
+</form>
+
+<table border="1">
+	{{#each heroesArray}}
+	<tr data-id="{{ this.id }}">
+		<td>
+			<input type="text" value="{{ this.name }}"  class="name"/>
+		</td>
+		<td>
+			<input type="text" value="{{ this.movie}}"  class="movie"/>
+		</td>
+		<td>
+			<input type="text" value="{{ this.power}}"  class="power"/>
+		</td>
+		<td>
+			<input type="text" value="{{this.height}}"  class="height"/>
+		</td>
+		<td>
+			<input type="text" value="{{ this.cape }}"  class="cape"/>
+		</td>
+		<td>
+			<input type="text" value="{{ this.heroLevel }}"  class="heroLevel"/>
+		</td>
+		<td>
+			<input type="text" value="{{ this.charming }}"  class="charming"/>
+		</td>
+		<td>
+			<button class="edit-hero">
+				Save!
+			</button>
+		</td>
+		<td>
+			<button class="delete-hero">
+				Delete!
+			</button>
+		</td>
+	</tr>
+	{{/each}}
+</table>
