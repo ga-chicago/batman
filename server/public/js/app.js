@@ -15,6 +15,7 @@ $('.delete').on('click', function(e){
 			console.log(error);
 		}
 	}); //ajax is running the delete request, eventually everything will be in ajax
+});
 
 $('.edit').on('click', function(e){
 	var row = $(e.target).parent().parent();
@@ -52,7 +53,7 @@ $('.deleteTwo').on('click', function(e){
 	console.log(id);
 
 	$.ajax({//the ajax is sending things to the url and the type, calls other functions
-		url: 'http://localhost:3000/heros/' + id, //client sends response to host
+		url: 'http://localhost:3000/heroes/' + id, //client sends response to host
 		type: 'DELETE',
 		success: function(result){
 			window.location.reload();
@@ -61,6 +62,7 @@ $('.deleteTwo').on('click', function(e){
 			console.log(error);
 		}
 	}); //ajax is running the delete request, eventually everything will be in ajax
+});
 
 $('.editTwo').on('click', function(e){
 	var row = $(e.target).parent().parent();
@@ -75,8 +77,9 @@ $('.editTwo').on('click', function(e){
 
 		//how to send it to the server!!!// //ajax makes an http request in javascript//
 		$.ajax({
-			url: '/heros/' + id,
+			url: '/heroes/' + id,
 			type: 'PATCH',
+			data: updatedHero,
 			success: function(result){ //callback function when successful response is made
 			console.log(result);
 			},
@@ -89,4 +92,5 @@ $('.editTwo').on('click', function(e){
 
 	console.log("clicked on edit");
 });
+
 

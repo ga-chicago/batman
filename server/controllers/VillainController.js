@@ -5,7 +5,7 @@ var Villain = require('../models/Villain');
 router.get('/', function(request, response){
 	Villain.find(function(err, villains){
 		console.log(villains);
-		response.render('home', {villainsArray: villains});
+		response.render('villains', {villainsArray: villains});
 	});
 });
 
@@ -22,7 +22,7 @@ router.patch('/:id', function(request, response){
 	var id = request.params.id;
 	var newInfo = request.body;
 
-	Villain,findById(id, function(err, villain){
+	Villain.findById(id, function(err, villain){
 		villain.name = newInfo.name;
 		villain.movie = newInfo.movie;
 		villain.power = newInfo.power;

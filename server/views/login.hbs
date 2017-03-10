@@ -1,0 +1,31 @@
+<h1>Login</h1>
+
+<form action="/user/login" method="POST">
+	<input type="text" placeholder="username" name="username" value=""/>
+	<input type="password" placeholder="password" name="password" value=""/>
+
+	<input type="submit" value="submit"/>
+
+</form>
+
+<table border='1'>
+{{#each usersArray}}
+<tr data-id="{{this.id}}">
+	<td>
+	<input type="text" value="{{ this.username }}" class="username"/>
+
+	</td>
+
+	<td>
+	<input type="text" value="{{ this.password }}" class="password"/>
+
+	</td>
+	<td class="edit">>
+	<button>EDIT</button>
+	</td>
+	<td class="delete">
+	<button>DELETE</button>
+	</td>
+	</tr>
+	{{/each}}
+</table>

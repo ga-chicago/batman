@@ -1,23 +1,20 @@
 var express = require('express');
 var router = express.Router();
-var Hero = require('../models/Hero');
+var Hero = require('../models/Hero.js');
 
 router.get('/', function(request, response){
-	Hero.find(function(error, heros){
-		console.log(heros);
+	console.log(request.session)
+	Hero.find(function(error, heroes){
+		console.log(heroes);
 		//searches the database
-	response.render('home', {herosArray: heros});
-});
-	}); 
+	response.render('heroes', {heroesArray: heroes});
+	});
+}); 
 
-router.post('/heros', function(request, response){
+router.post('/', function(request, response){
 	var hero = new Hero({name: request.body.name, movie: request.body.movie, power: request.body.power, height: request.body.height});
-	// console.log(request.body.name);
-	// console.log(request.body.movie);
-	// console.log(request.body.power);
-	// console.log(request.body.height);
 	hero.save();
-	response.redirect("/heros");
+	response.redirect("/heroes");
 
 });
 
@@ -33,7 +30,7 @@ router.post('/heros', function(request, response){
 		hero.height = newInfo.height;
 		
 		hero.save();
-		response.send('success');
+		response.redirect('/heroes');
 	})
 });
 

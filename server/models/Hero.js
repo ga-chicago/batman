@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 
+
 var HeroSchema = new mongoose.Schema({
 	name: String,
 	movie: String,
